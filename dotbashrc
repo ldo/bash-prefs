@@ -3,3 +3,19 @@ export PAGER='less -iX -x4'
 alias more="$PAGER"
 alias e='emacsclient -n' # e <file> opens <file> in running Emacs instance
 export LC_ALL=en_NZ.utf8
+
+#+
+# Following commands do a search on all files found in the current directory
+# or recursively found in its subdirectories (ignoring the insides of Git repos);
+# grepfiles shows all matches, while whichfiles shows just matching file names.
+# Both can take any options that are valid with grep, e.g. “grepfiles -E 'pat1|pat2'”.
+#-
+grepfiles()
+  {
+	find . -type f -not -path '/.git/' -exec grep -H "$@" {} ';' | sed 's/^\.\///'
+  } # grepfiles
+
+whichfiles()
+  {
+	find . -type f -not -path '/.git/' -exec grep -q "$@" {} ';' -print | sed 's/^\.\///'
+  } # whichfiles
