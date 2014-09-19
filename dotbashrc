@@ -1,0 +1,5 @@
+export PS1='\u@\h:\W> '
+export PAGER='less -iX -x4'
+alias more="$PAGER"
+alias e='emacsclient -n' # e <file> opens <file> in running Emacs instance
+export LC_ALL=en_NZ.utf8
