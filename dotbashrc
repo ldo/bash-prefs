@@ -12,10 +12,10 @@ export LC_ALL=en_NZ.utf8
 #-
 grepfiles()
   {
-	find . -type f -not -path '/.git/' -exec grep -H "$@" {} ';' | sed 's/^\.\///'
+	find . -type f -not -path '*/.git/*' -exec grep -H "$@" {} ';' | sed 's/^\.\///'
   } # grepfiles
 
 whichfiles()
   {
-	find . -type f -not -path '/.git/' -exec grep -q "$@" {} ';' -print | sed 's/^\.\///'
+	find . -type f -not -path '*/.git/*' -exec grep -q "$@" {} ';' -print | sed 's/^\.\///'
   } # whichfiles
