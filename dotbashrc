@@ -1,3 +1,4 @@
+complete -r # doesn't seem to interact correctly with wildcards
 export PS1='\u@\h:\W> '
 export PAGER='less -iX -x4'
 alias more="$PAGER"
