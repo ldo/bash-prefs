@@ -4,6 +4,9 @@ export PAGER='less -iX -x4'
 alias more="$PAGER"
 alias e='emacsclient -n' # e <file> opens <file> in running Emacs instance
 export LC_ALL=en_NZ.utf8
+# following two are needed so a custom ~/.XCompose will work
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
 
 #+
 # Following commands do a search on all files found in the current directory
