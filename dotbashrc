@@ -17,10 +17,10 @@ export QT_IM_MODULE=xim
 #-
 grepfiles()
   {
-	find . -type f -not -path '*/.git/*' -exec grep -Hn "$@" {} ';' | sed 's/^\.\///'
+    find . -type f -not -path '*/.git/*' -exec grep -Hn "$@" {} ';' | sed 's/^\.\///'
   } # grepfiles
 
 whichfiles()
   {
-	find . -type f -not -path '*/.git/*' -exec grep -q "$@" {} ';' -print | sed 's/^\.\///'
+    find . -type f -not -path '*/.git/*' -exec grep -q "$@" {} ';' -print | sed 's/^\.\///'
   } # whichfiles
